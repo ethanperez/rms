@@ -18,7 +18,19 @@ module.exports = {
     extensions: [ '.js', '.json', '.ts', '.tsx' ],
   },
   plugins: [
-    new webpack.IgnorePlugin(/^pg-native$/)
+    new webpack.IgnorePlugin(/^pg-native$/),
+    new webpack.EnvironmentPlugin([
+      'LEGACY_DB_USER',
+      'LEGACY_DB_HOST',
+      'LEGACY_DB_DATABASE',
+      'LEGACY_DB_PASSWORD',
+      'LEGACY_DB_PORT',
+      'RDS_DB_USER',
+      'RDS_DB_HOST',
+      'RDS_DB_DATABASE',
+      'RDS_DB_PASSWORD',
+      'RDS_DB_PORT',
+    ]),
   ],
   module: {
     rules: [
