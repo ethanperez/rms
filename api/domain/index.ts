@@ -1,9 +1,7 @@
 export {
-  instantiatePool as instantiateLegacyPool,
-  getPoolInstance as getLegacyPoolInstance,
+  getClient as getLegacyClient,
 } from './legacyDb';
 
 export {
-  instantiatePool as instantiateRdsPool,
-  getPoolInstance as getRdsPoolInstance,
+  getClient as getRdsClient,
 } from './rdsDb';
