@@ -1,0 +1,15 @@
+{
+  "name": "rms",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "api"
+  ],
+  "scripts": {
+    "lint": "tsc",
+    "api:local": "cd api && sls offline start",
+    "api:handler": "cd api && sls invoke local -f",
+    "api:deploy": "cd api && sls deploy -v",
+    "api:remove": "cd api && sls remove"
+  }
+}

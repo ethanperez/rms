@@ -1,0 +1,28 @@
+service: rms-api
+
+plugins:
+  - serverless-dotenv-plugin
+  - serverless-webpack
+  - serverless-offline
+
+provider:
+  name: aws
+  runtime: nodejs8.10
+
+custom:
+  webpack:
+    webpackConfig: ./webpack.config.js
+    includeModules: true
+    packager: yarn
+
+package:
+  individually: true
+
+functions:
+  dbSync:
+    handler: handlers/dbSync.sync
+    events:
+      - http:
+          path: dbSync
+          method: get
+      - schedule: rate(1 hour)

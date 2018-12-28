@@ -1,0 +1,14 @@
+language: node_js
+node_js:
+  - "node"
+  - "8.10"
+stages:
+  - lint
+  - name: deploy
+    if: branch = master
+jobs:
+  include:
+    - stage: lint
+      script: yarn lint
+    - stage: deploy
+      script: yarn api:deploy
