@@ -4,7 +4,7 @@ import { Pool } from 'pg';
 let _rdsPool: Pool;
 
 export const instantiatePool = () => {
-  if (!isNil(_rdsPool)) throw new Error('Pool is already instantiated');
+  if (!isNil(_rdsPool)) return _rdsPool;
 
   _rdsPool = new Pool({
     user: process.env.RDS_DB_USER,

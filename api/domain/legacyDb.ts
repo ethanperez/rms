@@ -4,7 +4,7 @@ import { Pool } from 'pg';
 let _legacyPool: Pool;
 
 export const instantiatePool = () => {
-  if (!isNil(_legacyPool)) throw new Error('Pool is already instantiated');
+  if (!isNil(_legacyPool)) return _legacyPool;
 
   _legacyPool = new Pool({
     user: process.env.LEGACY_DB_USER,

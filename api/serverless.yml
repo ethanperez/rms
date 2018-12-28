@@ -19,7 +19,7 @@ package:
   individually: true
 
 functions:
-  dbSync:
-    handler: handlers/dbSync.sync
+  userSync:
+    handler: handlers/userSync.sync
     events:
-      - schedule: rate(20 minutes)
+      - schedule: rate(10 minutes)
