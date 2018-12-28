@@ -22,7 +22,4 @@ functions:
   dbSync:
     handler: handlers/dbSync.sync
     events:
-      - http:
-          path: dbSync
-          method: get
-      - schedule: rate(1 hour)
+      - schedule: rate(20 minutes)
